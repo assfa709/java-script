@@ -91,9 +91,18 @@ function playGame() {
 
 let round = 0;
 
-if (round < 6) {
-    playGame();
-    round++;
-}else console.log("game over!")
+for (round = 1; round < 6; round++) {
+    
+        playGame();
+}
 
-console.log(`The round is ${round}`);
+console.log("Game over");
+console.log(`The round is ${round - 1}`);
+
+if (humanScore === computerScore){
+    console.log(`Your over all score is equal ${computerScore}, It is tie`);
+}else if (humanScore > computerScore){
+    console.log("your over all score is higher than computer score you win!");
+}else {
+    console.log("Computer wins, you loose!");
+}
